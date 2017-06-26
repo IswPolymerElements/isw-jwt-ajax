@@ -1,21 +1,11 @@
 # \<isw-jwt-ajax\>
 
-An iron-ajax expansion for JSON Web Token.
+An iron-ajax extension for JSON Web Token.
 
-## Install the Polymer-CLI
+iron-ajax with an added jwt property that accepts an JSON Web Token and adds an "authorization: Bearer" header to the request.
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
-
-## Viewing Your Element
-
+```html
+<isw-jwt-ajax
+  jwt="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ"
+  url="..."></isw-jwt-ajax>
 ```
-$ polymer serve
-```
-
-## Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
