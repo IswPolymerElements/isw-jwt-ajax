@@ -1,6 +1,6 @@
 {
   "name": "isw-jwt-ajax",
-  "description": "An iron-ajax expansion for JSON Web Token.",
+  "description": "An iron-ajax extension for JSON Web Token.",
   "main": "isw-jwt-ajax.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
