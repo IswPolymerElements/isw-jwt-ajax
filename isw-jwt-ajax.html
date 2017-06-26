@@ -1,0 +1,42 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="isw-jwt-ajax">
+	<script>
+		/**
+		 * `isw-jwt-ajax`
+		 * An iron-ajax expansion for JSON Web Token.
+		 *
+		 * iron-ajax with an added jwt property that accepts an JSON Web Token and adds an "authorization: Bearer" header to the request.
+		 *
+		 *     <isw-jwt-ajax
+		 *       jwt="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ"
+		 *       url="..."></isw-jwt-ajax>
+		 *
+		 * @customElement
+		 * @polymer
+		 */
+		class IswJwtAjax extends window.customElements.get( 'iron-ajax' ) {
+			static get is() {
+				return 'isw-jwt-ajax';
+			}
+
+			static get properties() {
+				return {
+					jwt: {
+						type: String,
+						observer: '_jwtChanged',
+						value: 'isw-jwt-ajax'
+					}
+				};
+			}
+
+			_jwtChanged( jwt ) {
+				this.set( 'headers.authorization', 'Bearer ' + jwt );
+			}
+		}
+
+		window.customElements.define( IswJwtAjax.is, IswJwtAjax );
+	</script>
+</dom-module>
