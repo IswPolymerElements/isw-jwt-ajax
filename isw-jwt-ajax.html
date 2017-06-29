@@ -27,8 +27,21 @@
 					jwt: {
 						type: String,
 						observer: '_jwtChanged'
+					},
+					/**
+					 * If set, no requests are send if no jwt is provided.
+					 */
+					jwtRequired: {
+						type: Boolean,
+						value: false
 					}
 				};
+			}
+
+			generateRequest() {
+				// Interrupt generate request if jwt is required and not provided.
+				if( this.jwtRequired && !this.jwt ) { return; }
+				super.generateRequest();
 			}
 
 			_jwtChanged( jwt ) {
